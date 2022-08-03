@@ -53,7 +53,6 @@
     let index = props.data.values.findIndex((el) => {
       return el.value === options.value;
     });
-    console.log(index)
     emit("updateComponent", props.indexComponent, true, index, true);
   });
 </script>

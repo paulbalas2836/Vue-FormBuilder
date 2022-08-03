@@ -236,8 +236,7 @@
   const maxLength = ref(props.data?.maxLength);
 
   function changeData(property, value) {
-    console.log("ceva")
-    emit("updateComponent", property, props.index, value);
+        emit("updateComponent", property, props.index, value);
   }
 
 </script>
