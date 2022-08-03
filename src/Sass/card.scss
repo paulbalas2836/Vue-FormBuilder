@@ -1,0 +1,74 @@
+.card {
+  width: 100%;
+  background-color: white;
+  border-radius: 0.375rem;
+  height: fit-content;
+  padding: 0.375rem;
+  position: relative;
+
+  .action-button-zone {
+    background-color: white;
+    opacity: 0;
+    position: absolute;
+    display: flex;
+    align-items: end;
+    border-top-right-radius: 0.375rem;
+    right: 0;
+    top: 0;
+
+    div {
+      height: 100%;
+    }
+    .delete:hover {
+      background-color: #c66865;
+    }
+    .delete:hover i{
+      color: white;
+    }
+
+    .edit:hover {
+      background-color: #65aac6;
+    }
+
+    .edit:hover i {
+      color: white;
+    }
+
+    .copy:hover {
+      background-color: #93c54b;
+      border-top-right-radius: 0.375rem;
+    }
+
+    .copy:hover i{
+      color: white;
+    }
+
+    i {
+      padding-top: 0.4375rem;
+      padding-bottom: 0.4375rem;
+      padding-left: 0.625rem;
+      padding-right: 0.625rem;
+      color: $secondGray;
+      width: 1rem;
+      height: 1rem;
+    }
+  }
+  .card-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    text-align: start;
+    color: $mainGray;
+  }
+}
+.card-hover {
+  background-color: #fdd;
+}
+
+.card:hover > .action-button-zone {
+  opacity: 1;
+}
+
+.hidden-input-card {
+  background-color: rgba(255, 255, 255, 0.5);
+}

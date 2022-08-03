@@ -1,0 +1,151 @@
+@import "./variable.scss";
+@import "./dragZone.scss";
+@import "./dragOptions.scss";
+@import "./card.scss";
+@import "./formItems.scss";
+@import "./edit.scss";
+@import "./modal.scss";
+:root {
+  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.87);
+
+  background-color: #74ebd5;
+  background-image: linear-gradient(90deg, #74ebd5 0%, #9face6 100%);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+#app {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.main-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  h1 {
+    font-weight: lighter;
+    span {
+      font-weight: 600;
+    }
+  }
+  .subtitle {
+    margin-top: 1.875rem;
+  }
+
+  .drag-content {
+    margin-top: 50px;
+    display: flex;
+    width: 100%;
+  }
+}
+.help-text {
+  position: absolute;
+  background-color: black;
+  min-width: 6.25rem;
+  min-height: 1.5625rem;
+  height: fit-content;
+  top: -60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.7813rem;
+}
+
+.help-text-triangle {
+  position: absolute;
+  background-color: transparent;
+  width: 0px;
+  height: 0px;
+  top: -10px;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 10px solid black;
+}
+
+.label-content {
+  margin-bottom: 0.3125rem;
+  .form-label {
+    color: $secondGray;
+  }
+  .fa-asterisk {
+    color: red;
+    font-weight: normal;
+  }
+  span {
+    visibility: visible;
+    color: #fff;
+    background: #000;
+    width: 16px;
+    height: 16px;
+    border-radius: 8px;
+    display: inline-block;
+    text-align: center;
+    line-height: 16px;
+    margin: 0 5px;
+    font-size: 12px;
+    cursor: default;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: black;
+}
+
+.w-full {
+  width: 100%;
+}
+
+.w-80 {
+  width: 80%;
+}
+
+blockquote {
+  color: $mainGray;
+  margin: 0;
+}
+
+output {
+  color: $mainGray;
+}
+
+address {
+  color: $mainGray;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+  height: 100%;
+  width: 100%;
+}

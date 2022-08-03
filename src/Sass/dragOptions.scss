@@ -1,0 +1,67 @@
+.drag-content {
+  .drag-section {
+    display: flex;
+    flex-direction: column;
+    .drag-options-content {
+      margin-left: 0.625rem;
+      border-radius: 0.375rem;
+      background-color: white;
+      color: black;
+      width: 15.625rem;
+      text-align: start;
+      .item {
+        padding: 0.4375rem;
+        cursor: move;
+
+        span {
+          margin-left: 0.3125rem;
+          color: $mainGray;
+        }
+        i {
+          color: $mainGray;
+        }
+        border-bottom: 1px solid $mainGray;
+      }
+    }
+    .button-zone {
+      display: flex;
+      flex-direction: row-reverse;
+      margin: 0.3125rem;
+
+      .clear-button {
+        background-color: rgb(217, 83, 79);
+        color: white;
+        border: none;
+        text-transform: uppercase;
+        border-bottom-left-radius: 0.375rem;
+        border-top-left-radius: 0.375rem;
+        padding-left: 0.625rem;
+        padding-right: 0.625rem;
+        padding-bottom: 0.4375rem;
+        padding-top: 0.4375rem;
+        cursor: pointer;
+      }
+      .clear-button:hover {
+        background-color: rgb(220, 95, 91);
+      }
+
+      .json-button {
+        background-color: rgb(57, 58, 53);
+        color: white;
+        border: none;
+        text-transform: uppercase;
+        border-bottom-right-radius: 0.375rem;
+        border-top-right-radius: 0.375rem;
+        padding-left: 0.625rem;
+        padding-right: 0.625rem;
+        padding-bottom: 0.4375rem;
+        padding-top: 0.4375rem;
+        cursor: pointer;
+      }
+
+      .json-button:hover {
+        background-color: rgb(77, 77, 76);
+      }
+    }
+  }
+}

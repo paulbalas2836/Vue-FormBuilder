@@ -1,0 +1,26 @@
+<Card
+  @delete="deleteItem(index)"
+  @edit="editItem(index)"
+  @copy="copyItem(index)"
+  :class="{ 'hidden-input-card': element.data?.type === 'hidden' }"
+>
+  <div :class="{ 'card-content': showLabel(item) }">
+    <InputLabel
+      v-show="showLabel(element)"
+      :is-required="element.data?.required"
+      :help-text="element.data?.description"
+      :label="element.data?.label"
+    ></InputLabel>
+    <component
+      v-show="!element.showEditZone"
+      :is="element.item"
+      :data="element.data"
+    ></component>
+    <EditZone
+      v-show="element.showEditZone"
+      :data="element.data"
+      :index="index"
+      @update-component="changeData"
+    ></EditZone>
+  </div>
+</Card>

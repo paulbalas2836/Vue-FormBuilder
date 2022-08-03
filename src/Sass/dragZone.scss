@@ -1,0 +1,21 @@
+.drag-content {
+  .drag-zone {
+    width: 100%;
+    height: fit-content;
+    min-height: 31.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.625rem;
+    margin-right: 0.625rem;
+
+    p {
+      color: black;
+    }
+  }
+  .zone-text {
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.5);
+    border: 3px dashed white;
+  }
+}
