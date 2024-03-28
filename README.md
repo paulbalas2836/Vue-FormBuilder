@@ -1,4 +1,4 @@
-# Vue 3 + Vite + SASS
+# Vue 3 + Vite + SCSS
 
 ## A Vue.js form builder inspired by https://formbuilder.online/
 
