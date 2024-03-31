@@ -1,7 +1,22 @@
-# Vue 3 + Vite
+# Vue 3 + Vite + SCSS
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+## A Vue.js form builder inspired by https://formbuilder.online/
 
-## Recommended IDE Setup
+### Main key features:
+- Drag and drop functionality
+- Json file representation of the form
+- Various editable form components
+  - Autocomplete
+  - Button
+  - Checkbox Group
+  - Date Field
+  - File Upload
+  - Header
+  - Hidden Input
+  - Number Input
+  - Paragraph
+  - Radio Group
+  - Select
+  - Text Field
+  - Text Area
 
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar)
