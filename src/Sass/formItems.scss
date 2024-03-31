@@ -225,8 +225,10 @@
           .img-container {
             height: 6.25rem;
             width: 4.375rem;
+            object-fit: cover;
             img {
               width: 100%;
+              height: 100%;
             }
           }
 

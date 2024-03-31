@@ -16,21 +16,23 @@
       <input
         type="checkbox"
         v-model="multiple"
-        @input="(event) => $emit('changeData', 'multiple', event.target.checked)"
+        @input="
+          (event) => $emit('changeData', 'multiple', event.target.checked)
+        "
       />
       <p>"Allow users to upload multiple files"</p>
     </div>
   </div>
 </template>
 <script setup>
-  import { ref } from "vue";
-  const emit = defineEmits(["changeData"]);
-  const props = defineProps({
-    data: {
-      type: Object,
-      required: true,
-    },
-  });
-  const subtype = ref(props.data?.subtype);
-  const multiple = ref(props.data?.multiple);
+import { ref } from "vue";
+const emit = defineEmits(["changeData"]);
+const props = defineProps({
+  data: {
+    type: Object,
+    required: true,
+  },
+});
+const subtype = ref(props.data?.subtype);
+const multiple = ref(props.data?.multiple);
 </script>

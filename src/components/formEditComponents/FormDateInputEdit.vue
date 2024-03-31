@@ -13,13 +13,13 @@
   </div>
 </template>
 <script setup>
-  import { ref } from "vue";
-  const emit = defineEmits(["changeData"]);
-  const props = defineProps({
-    data: {
-      type: Object,
-      required: true,
-    },
-  });
+import { ref } from "vue";
+const emit = defineEmits(["changeData"]);
+const props = defineProps({
+  data: {
+    type: Object,
+    required: true,
+  },
+});
 </script>
 >

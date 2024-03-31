@@ -196,47 +196,46 @@
   </div>
 </template>
 <script setup>
-  import FormAutocompleteEditVue from "./FormAutocompleteEdit.vue";
-  import FormButtonEdit from "./FormButtonEdit.vue";
-  import FormCheckboxEdit from "./FormCheckboxEdit.vue";
-  import FormDateInputEdit from "./FormDateInputEdit.vue";
-  import FormFileUploadEdit from "./FormFileUploadEdit.vue";
-  import FormHeaderEdit from "./FormHeaderEdit.vue";
-  import FormHiddenInputEdit from "./FormHiddenInputEdit.vue";
-  import FormNumberInputEdit from "./FormNumberInputEdit.vue";
-  import FormParagraphEdit from "./FormParagraphEdit.vue";
-  import FormRadioGroupEdit from "./FormRadioGroupEdit.vue";
-  import FormSelectInputEdit from "./FormSelectInputEdit.vue";
-  import FormTextAreaEdit from "./FormTextAreaEdit.vue";
-  import FormTextFieldEdit from "./FormTextFieldEdit.vue";
+import FormAutocompleteEditVue from "./FormAutocompleteEdit.vue";
+import FormButtonEdit from "./FormButtonEdit.vue";
+import FormCheckboxEdit from "./FormCheckboxEdit.vue";
+import FormDateInputEdit from "./FormDateInputEdit.vue";
+import FormFileUploadEdit from "./FormFileUploadEdit.vue";
+import FormHeaderEdit from "./FormHeaderEdit.vue";
+import FormHiddenInputEdit from "./FormHiddenInputEdit.vue";
+import FormNumberInputEdit from "./FormNumberInputEdit.vue";
+import FormParagraphEdit from "./FormParagraphEdit.vue";
+import FormRadioGroupEdit from "./FormRadioGroupEdit.vue";
+import FormSelectInputEdit from "./FormSelectInputEdit.vue";
+import FormTextAreaEdit from "./FormTextAreaEdit.vue";
+import FormTextFieldEdit from "./FormTextFieldEdit.vue";
 
-  import { ref } from "vue";
-  const emit = defineEmits(["updateComponent"]);
-  const props = defineProps({
-    data: {
-      type: Object,
-      required: true,
-    },
-    index: {
-      type: Number,
-      required: true,
-    },
-  });
+import { ref } from "vue";
+const emit = defineEmits(["updateComponent"]);
+const props = defineProps({
+  data: {
+    type: Object,
+    required: true,
+  },
+  index: {
+    type: Number,
+    required: true,
+  },
+});
 
-  const isRequired = ref(props.data?.required);
-  const label = ref(props.data?.label);
-  const helpText = ref(props.data?.description);
-  const placeholder = ref(props.data?.placeholder);
-  const className = ref(props.data?.className);
-  const name = ref(props.data?.name);
-  const access = ref(props.data?.access);
-  const isAdmin = ref(props.data?.role);
-  const inline = ref(props.data?.inline);
-  const other = ref(props.data?.other);
-  const maxLength = ref(props.data?.maxLength);
+const isRequired = ref(props.data?.required);
+const label = ref(props.data?.label);
+const helpText = ref(props.data?.description);
+const placeholder = ref(props.data?.placeholder);
+const className = ref(props.data?.className);
+const name = ref(props.data?.name);
+const access = ref(props.data?.access);
+const isAdmin = ref(props.data?.role);
+const inline = ref(props.data?.inline);
+const other = ref(props.data?.other);
+const maxLength = ref(props.data?.maxLength);
 
-  function changeData(property, value) {
-        emit("updateComponent", property, props.index, value);
-  }
-
+function changeData(property, value) {
+  emit("updateComponent", property, props.index, value);
+}
 </script>

@@ -35,14 +35,14 @@
   </div>
 </template>
 <script setup>
-  import { ref } from "vue";
-  const emit = defineEmits(["changeData"]);
-  const props = defineProps({
-    data: {
-      type: Object,
-      required: true,
-    },
-  });
-  const rows = ref(props.data?.rows);
-  const subtype = ref(props.data?.subtype);
+import { ref } from "vue";
+const emit = defineEmits(["changeData"]);
+const props = defineProps({
+  data: {
+    type: Object,
+    required: true,
+  },
+});
+const rows = ref(props.data?.rows);
+const subtype = ref(props.data?.subtype);
 </script>

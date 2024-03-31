@@ -5,7 +5,8 @@
 @import "./formItems.scss";
 @import "./edit.scss";
 @import "./modal.scss";
-:root {
+@import "./toast.scss";
+:root  {
   font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
   font-size: 16px;
   line-height: 24px;

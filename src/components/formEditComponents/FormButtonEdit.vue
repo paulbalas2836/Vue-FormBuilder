@@ -48,28 +48,28 @@
   </div>
 </template>
 <script setup>
-  import { ref } from "vue";
-  const emit = defineEmits(["changeData"]);
-  const props = defineProps({
-    data: {
-      type: Object,
-      required: true,
-    },
-  });
-  const value = ref(props.data?.value);
-  const style = ref(props.data?.style);
-  const subtype = ref(props.data?.subtype);
-  const className = ref(props.data?.className);
+import { ref } from "vue";
+const emit = defineEmits(["changeData"]);
+const props = defineProps({
+  data: {
+    type: Object,
+    required: true,
+  },
+});
+const value = ref(props.data?.value);
+const style = ref(props.data?.style);
+const subtype = ref(props.data?.subtype);
+const className = ref(props.data?.className);
 
-  function changeStyle(value) {
-    // if (className.value.indexOf(`btn`) === -1) className.value += `btn`;
-    // if (className.value.indexOf(`btn-`) === -1) {
-    //   className.value += `btn-${value}`;
-    //   return;
-    // }
+function changeStyle(value) {
+  // if (className.value.indexOf(`btn`) === -1) className.value += `btn`;
+  // if (className.value.indexOf(`btn-`) === -1) {
+  //   className.value += `btn-${value}`;
+  //   return;
+  // }
 
-    // console.log(className.value);
+  // console.log(className.value);
 
-    emit("changeData", "style", value);
-  }
+  emit("changeData", "style", value);
+}
 </script>

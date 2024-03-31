@@ -37,35 +37,33 @@
   </div>
 </template>
 <script setup>
-  import { ref, watch } from "vue";
-  const emit = defineEmits(["changeData"]);
-  const props = defineProps({
-    data: {
-      type: Object,
-      required: true,
-    },
-  });
+import { ref, watch } from "vue";
+const emit = defineEmits(["changeData"]);
+const props = defineProps({
+  data: {
+    type: Object,
+    required: true,
+  },
+});
 
-  const values = ref(
-    props.data?.values
-      ? [...JSON.parse(JSON.stringify(props.data.values))]
-      : null
-  );
-  const toggle = ref(props.data?.toggle);
+const values = ref(
+  props.data?.values ? [...JSON.parse(JSON.stringify(props.data.values))] : null
+);
+const toggle = ref(props.data?.toggle);
 
-  function addValues() {
-    values.value.push({ label: "", value: "", selected: false });
-  }
+function addValues() {
+  values.value.push({ label: "", value: "", selected: false });
+}
 
-  function removeValue(index) {
-    values.value.splice(index, 1);
-  }
+function removeValue(index) {
+  values.value.splice(index, 1);
+}
 
-  watch(
-    values,
-    () => {
-      emit("changeData", "values", values.value);
-    },
-    { deep: true }
-  );
+watch(
+  values,
+  () => {
+    emit("changeData", "values", values.value);
+  },
+  { deep: true }
+);
 </script>

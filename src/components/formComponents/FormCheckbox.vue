@@ -2,7 +2,7 @@
   <div class="checkbox">
     <div :class="{ 'inline-checkbox': data?.inline }">
       <div
-        v-for="(option, index) in data?.values"
+        v-for="(option, index) in options"
         :key="index"
         class="checkbox-content"
       >
@@ -13,7 +13,7 @@
           v-show="!data?.toggle"
           :value="option?.value"
           :id="index"
-          @input="$emit('update:modelValue', $event.target.checked)"
+          @input="updateOptions(option)"
         />
 
         <label
@@ -26,7 +26,7 @@
             v-model="option.selected"
             :value="option?.value"
             :id="index"
-            @input="$emit('update:modelValue', $event.target.checked)"
+            @input="updateOptions(option)"
             class="checkbox-switch"
           />
           <span class="slide-round"></span>
@@ -46,19 +46,32 @@
 </template>
 
 <script setup>
-  import { ref } from "vue";
-  const emit = defineEmits(["updateComponent", "update:modelValue"]);
-  defineProps({
-    data: {
-      type: Object,
-      required: true,
-    },
-    indexComponent: {
-      type: Number,
-      required: false,
-    },
-  });
+import { ref, computed } from "vue";
+const emit = defineEmits(["updateComponent", "update:modelValue"]);
+const props = defineProps({
+  data: {
+    type: Object,
+    required: true,
+  },
+  indexComponent: {
+    type: Number,
+    required: false,
+  },
+});
 
-  const otherCheckbox = ref(false);
-  const otherCheckboxLabel = ref(null);
+const otherCheckbox = ref(false);
+const otherCheckboxLabel = ref(null);
+
+const options = computed({
+  get() {
+    return props.data?.values;
+  },
+  set(payload) {
+    emit("update:modelValue", payload);
+  },
+});
+
+function updateOptions(option) {
+  option.selected = !option.selected;
+}
 </script>

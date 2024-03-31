@@ -3,7 +3,7 @@
     <div class="form-container" v-show="data.hasOwnProperty('values')">
       <label>Value</label>
       <input
-        type="text"
+        type="number"
         v-model="data.values"
         @input="(event) => $emit('changeData', 'values', event.target.value)"
         placeholder="Value"
@@ -43,15 +43,15 @@
   </div>
 </template>
 <script setup>
-  import { ref } from "vue";
-  const emit = defineEmits(["changeData"]);
-  const props = defineProps({
-    data: {
-      type: Object,
-      required: true,
-    },
-  });
-  const min = ref(props.data?.min);
-  const max = ref(props.data?.max);
-  const step = ref(props.data?.step);
+import { ref } from "vue";
+const emit = defineEmits(["changeData"]);
+const props = defineProps({
+  data: {
+    type: Object,
+    required: true,
+  },
+});
+const min = ref(props.data?.min);
+const max = ref(props.data?.max);
+const step = ref(props.data?.step);
 </script>

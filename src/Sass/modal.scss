@@ -5,19 +5,14 @@
   .modal-background {
     position: fixed;
     background-color: rgba(107, 114, 128, 0.75);
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
+    inset: 0px;
   }
 
   .modal-container {
     position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    z-index: 11;
+    inset: 0px;
+    z-index: 10;
+    width: 100vw;
     overflow-y: auto;
 
     .modal-content-container {
@@ -28,18 +23,64 @@
 
       .modal-content {
         position: relative;
-        background-color: white;
+        background-color: #23241f;
+        padding: 2rem;
         border-radius: 0.375rem;
-        overflow: hidden;
+        height: 50rem;
+        overflow: auto;
         box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1),
           0 2px 4px -2px rgb(0 0 0 / 0.1);
-          width: 80%;
+        width: 80%;
 
         .content {
-          background-color: white;
+          background-color: #23241f;
+          border: 1px solid white;
+          border-radius: 0.375rem;
           padding: 2rem;
-          color: $mainGray;
+          color: white;
           white-space: pre;
+
+          .identation {
+            padding-left: 1.25rem;
+          }
+
+          .key {
+            color: #c2255d;
+          }
+
+          .yellow {
+            color: #d3c96c;
+          }
+
+          .purple {
+            color: #8364b9;
+          }
+
+          .footer {
+            display: flex;
+            flex-direction: column;
+            position: fixed;
+            top: 65%;
+            left: 80%;
+            button {
+              cursor: pointer;
+              border-radius: 0.375rem;
+              padding: 1rem;
+              background-color: #3e3f3a;
+              color: white;
+              border: none;
+              align-self: self-end;
+
+              &:focus-visible {
+                outline: #3e3f3a solid 0.125rem;
+                outline-offset: 0.125rem;
+              }
+
+              &:hover {
+                opacity: 0.7;
+              }
+            }
+          }
         }
       }
     }

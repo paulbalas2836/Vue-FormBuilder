@@ -7,6 +7,8 @@
       :name="data?.name"
       :multiple="data?.multiple"
       :placeholder="data?.placeholder"
+      id="file_upload"
+      @change="onFileSelect"
     />
     <div
       v-show="data.subtype === 'fileuploader'"
@@ -14,10 +16,10 @@
       :class="{ 'file-uploader-list': files.length !== 0 }"
       @dragenter.prevent="isItemOver = true"
       @dragleave.prevent="isItemOver = false"
-      @drop.prevent="addFile"
+      @drop.prevent="onFileDrop"
       @dragover.prevent
     >
-      <label v-show="!isItemOver">
+      <label v-show="!isItemOver" for="file_upload">
         <span>Upload a file</span>
         <input
           class="sr-only"
@@ -29,7 +31,7 @@
         />
       </label>
       <div class="file-card-container">
-        <div v-for="(file, index) in files" :key="index" class="file-card">
+        <div v-for="(file, index) in files" :key="file.key" class="file-card">
           <div class="delete-button" @click="deleteItem(index)">x</div>
           <div class="img-container">
             <img v-show="file.data.type.includes('image')" :src="file.image" />
@@ -44,29 +46,42 @@
 </template>
 
 <script setup>
-  import { ref } from "vue";
-  defineProps({
-    data: { type: Object, required: true },
-    indexComponent: {
-      type: Number,
-      required: false,
-    },
+import { ref } from "vue";
+defineProps({
+  data: { type: Object, required: true },
+  indexComponent: {
+    type: Number,
+    required: false,
+  },
+});
+const files = ref([]);
+const isItemOver = ref(false);
+
+function onFileSelect(event) {
+  if (event.target.files.length === 0) return;
+
+  addFile(event.target.files[0]);
+}
+
+function onFileDrop(event) {
+  if (event.dataTransfer.files.length === 0) return;
+
+  addFile(event.dataTransfer.files[0]);
+  isItemOver.value = false;
+}
+
+function addFile(file) {
+  files.value.push({
+    data: file,
+    image: null,
+    key: files.value.length,
   });
-  const files = ref([]);
-  const isItemOver = ref(false);
 
-  function addFile(event) {
-    files.value.push({ data: event.dataTransfer.files[0], image: null });
+  if (files.value[files.value.length - 1].data.type.includes("image"))
+    files.value[files.value.length - 1].image = URL.createObjectURL(file);
+}
 
-    if (files.value[files.value.length - 1].data.type.includes("image"))
-      files.value[files.value.length - 1].image = URL.createObjectURL(
-        event.dataTransfer.files[0]
-      );
-
-    isItemOver.value = false;
-  }
-
-  function deleteItem(index) {
-    files.value.splice(index, 1);
-  }
+function deleteItem(index) {
+  files.value.splice(index, 1);
+}
 </script>
