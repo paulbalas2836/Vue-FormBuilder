@@ -1,5 +1,5 @@
-# Vue 3 Form Builder
-## Vue 3 Form Builder is a lightweight form building tool developed with Vue 3, Vite, and SCSS. Inspired by [formbuilder.online](https://formbuilder.online/), it provides an intuitive drag-and-drop interface for building dynamic forms.
+# Form Builder
+## Form Builder is a lightweight form building tool developed with Vue 3, Vite, and SCSS. Inspired by [formbuilder.online](https://formbuilder.online/), it provides an intuitive drag-and-drop interface for building dynamic forms.
 
 ### Key Features
   - Drag and Drop: Easily create forms by dragging and dropping form components onto the canvas.
