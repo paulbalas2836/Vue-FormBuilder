@@ -20,5 +20,5 @@
     - Select
     - Text Field
     - Text Area
-    - 
+  
 This form builder aims to streamline the process of creating and customizing forms for various applications.
